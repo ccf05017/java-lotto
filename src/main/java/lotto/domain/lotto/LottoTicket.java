@@ -34,6 +34,9 @@ public class LottoTicket {
     }
 
     private void validation(List<LottoNumber> values) {
+        if (values == null) {
+            throw new LottoTicketSizeException("Null cannot create LottoTicket");
+        }
         if (values.size() != EMPTY_SIZE && values.size() != SIZE) {
             throw new LottoTicketSizeException("Lotto ticket can have only six lotto numbers");
         }
