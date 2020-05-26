@@ -14,7 +14,7 @@ public class LottoGenerator {
         return LottoTicket.create(lottoSeed.subList(0, 6));
     }
 
-    public static LottoTicket createByManual(List<Integer> intList) {
+    public static LottoTicket createByManualNumbers(List<Integer> intList) {
         return LottoTicket.create(
                 intList.stream()
                         .map(LottoNumber::create)
@@ -24,9 +24,8 @@ public class LottoGenerator {
 
     public static LottoTicket createByManual(String inputString) {
         stringValidation(inputString);
-        return LottoGenerator.createByManual(
-                Arrays.asList(inputString.split(","))
-                        .stream()
+        return LottoGenerator.createByManualNumbers(
+                Arrays.stream(inputString.split(","))
                         .map(inputValue -> Integer.parseInt(inputValue.trim()))
                         .collect(Collectors.toList())
         );

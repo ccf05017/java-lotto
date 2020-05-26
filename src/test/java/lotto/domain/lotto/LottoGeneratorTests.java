@@ -28,7 +28,7 @@ class LottoGeneratorTests {
     @DisplayName("숫자 여섯개를 입력 받아서 로또 티켓을 발급 할 수 있어야 한다.")
     @Test
     void manualTicketTest() {
-        LottoTicket lottoTicket = LottoGenerator.createByManual(Arrays.asList(1, 2, 3, 4, 5, 6));
+        LottoTicket lottoTicket = LottoGenerator.createByManualNumbers(Arrays.asList(1, 2, 3, 4, 5, 6));
         assertThat(lottoTicket.size()).isEqualTo(6);
     }
 

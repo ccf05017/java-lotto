@@ -24,7 +24,7 @@ class RankCalculatorTests {
 
     @BeforeEach
     public void setup() {
-        winTicket = LottoGenerator.createByManual(
+        winTicket = LottoGenerator.createByManualNumbers(
                 Arrays.asList(1, 2, 3, 4, 5, 6)
         );
         bonusNumber = LottoNumber.create(10);
@@ -55,15 +55,15 @@ class RankCalculatorTests {
     public static Stream<Arguments> lottoTicketAndRank() {
         return Stream.of(
                 Arguments.of(
-                        LottoGenerator.createByManual(Arrays.asList(1, 2, 3, 4, 5, 6)),
+                        LottoGenerator.createByManualNumbers(Arrays.asList(1, 2, 3, 4, 5, 6)),
                         Rank.FIRST
                 ),
                 Arguments.of(
-                        LottoGenerator.createByManual(Arrays.asList(2, 3, 4, 5, 6, 10)),
+                        LottoGenerator.createByManualNumbers(Arrays.asList(2, 3, 4, 5, 6, 10)),
                         Rank.SECOND
                 ),
                 Arguments.of(
-                        LottoGenerator.createByManual(Arrays.asList(2, 3, 4, 5, 6, 7)),
+                        LottoGenerator.createByManualNumbers(Arrays.asList(2, 3, 4, 5, 6, 7)),
                         Rank.THIRD
                 )
         );
