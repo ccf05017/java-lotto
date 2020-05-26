@@ -33,7 +33,7 @@ public enum Rank {
         return matchNumber;
     }
 
-    public static Rank create(int matchNumber, boolean bonusMatch) {
+    public static Rank findRank(int matchNumber, boolean bonusMatch) {
         Optional<Rank> candidateRank = Arrays.stream(Rank.values())
                 .filter(rank -> rank.matchNumber == matchNumber)
                 .findFirst();

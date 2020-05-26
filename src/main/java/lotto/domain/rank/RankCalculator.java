@@ -17,7 +17,7 @@ public class RankCalculator {
     public Rank getRank(LottoTicket lottoTicket) {
         int matchNumber = winTicket.howManyMatch(lottoTicket);
         boolean isMatchBonusNumber = lottoTicket.hasThisNumber(winBonusNumber);
-        return Rank.create(matchNumber, isMatchBonusNumber);
+        return Rank.findRank(matchNumber, isMatchBonusNumber);
     }
 
     private void bonusNumberValidation(LottoTicket lottoTicket, LottoNumber bonusNumber) {

@@ -17,11 +17,11 @@ class RankTests {
     @DisplayName("정적 팩터리 메서드로 등수를 구분할 수 있다.")
     @Test
     void createTest() {
-        assertThat(Rank.create(6, false)).isEqualTo(FIRST);
-        assertThat(Rank.create(5, false)).isEqualTo(THIRD);
-        assertThat(Rank.create(5, true)).isEqualTo(SECOND);
-        assertThat(Rank.create(4, true)).isEqualTo(FOURTH);
-        assertThat(Rank.create(4, false)).isEqualTo(FOURTH);
+        assertThat(Rank.findRank(6, false)).isEqualTo(FIRST);
+        assertThat(Rank.findRank(5, false)).isEqualTo(THIRD);
+        assertThat(Rank.findRank(5, true)).isEqualTo(SECOND);
+        assertThat(Rank.findRank(4, true)).isEqualTo(FOURTH);
+        assertThat(Rank.findRank(4, false)).isEqualTo(FOURTH);
     }
 
     @DisplayName("당첨 등수가 2등인지를 알려줄 수 있다.")
